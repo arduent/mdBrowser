@@ -69,11 +69,19 @@ void mdBrowser::on_tree_clicked(const QModelIndex &index)
         /* set up the pandoc command and run it
          * pandoc demands a TITLE so we make a bogus one then remove it later
         */
-        QString cmd = "pandoc " + selPath + " --metadata title='REMOVETITLE' -f markdown -t html -s -o " + tmpFile;
         QProcess process;
-        process.start(cmd);
+        QString cmd = "pandoc";
+        QStringList arguments;
+        arguments << selPath;
+        arguments << "--metadata" << "title='REMOVETITLE'";
+        arguments << "-f" << "markdown";
+        arguments << "-t" << "html";
+        arguments << "-s";
+        arguments << "-o" << tmpFile;
+        process.start(cmd, arguments);
         process.waitForFinished();
         process.close();
+
 
         QFile f(tmpFile);
         if (f.open(QFile::ReadOnly | QFile::Text))
@@ -94,6 +102,6 @@ void mdBrowser::on_tree_clicked(const QModelIndex &index)
         /* delete the temporary file
          * if the f.open don't work for some reason then this might make bad things happen
         */
-        f.remove();
+        //f.remove();
     }
 }

@@ -10,4 +10,61 @@ Caveats
 
 Links in the MD files do not work at the moment. 
 
+Build
+-----
+
+```
+qmake
+make
+```
+
+Install
+-------
+```
+sudo make install
+```
+
+This will put the executable in 
+/opt/mdBrowser/bin/mdBrowser.
+
+Install 'pandoc' on your system.
+
+FreeBSD:
+```
+pkg install hs-pandoc
+```
+
+Fedora:
+```
+sudo dnf install pandoc
+```
+
+Debian:
+```
+sudo apt install pandoc
+```
+
+Add /opt/mdBrowser/bin to your path, then you can call 'mdBrowser' from any path on your system.
+Alternatively, cd to your desired path and run /opt/mdBrowser/bin/mdBrowser.
+
+Uninstall
+---------
+```
+sudo make uninstall
+```
+
+Clean
+-----
+```
+make clean
+```
+Also, you may restore to pristine using:
+```
+make distclean
+```
+
+
+
+
+
 
