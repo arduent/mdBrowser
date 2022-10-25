@@ -102,6 +102,6 @@ void mdBrowser::on_tree_clicked(const QModelIndex &index)
         /* delete the temporary file
          * if the f.open don't work for some reason then this might make bad things happen
         */
-        //f.remove();
+        f.remove();
     }
 }
