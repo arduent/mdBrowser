@@ -5,6 +5,11 @@ This program displays the system file tree in the left pane, and a webview in th
 
 pandoc was selected because it is fast and produces quality renders.
 
+Screenshot
+----------
+
+![Alt text](https://github.com/arduent/mdBrowser/blob/current/Screenshot.png?raw=true "Screenshot of mdBrowser")
+
 Caveats
 -------
 
